@@ -1,0 +1,34 @@
+{
+  "name": "react-native-styled-px2dp",
+  "version": "1.0.0",
+  "description": "Write CSS px in react-native using styled-components and adapt multi resolution screens automatically.",
+  "main": "dist/index.js",
+  "scripts": {
+    "prepare": "install-peers",
+    "build": "NODE_ENV=production tsc -p tsconfig.json"
+  },
+  "typings": "dist/index.d.ts",
+  "keywords": [
+    "react-native",
+    "px2dp",
+    "px-to-dp",
+    "vw",
+    "px2vw",
+    "px-to-vw",
+    "styled-px2dp",
+    "css-in-js",
+    "styled-components",
+    "multi-screen",
+    "adaptation"
+  ],
+  "author": "",
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "^0.61.4",
+    "styled-components": "^4.4.1"
+  },
+  "devDependencies": {
+    "install-peers-cli": "^2.1.1",
+    "typescript": "^3.7.2"
+  }
+}

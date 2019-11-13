@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "module": "system",
+    "declaration": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "lib": ["es2017"],
+    "target": "es5",
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "sourceMap": true,
+    "outFile": "./dist/index.js",
+    "baseUrl": "./"
+  },
+  "exclude": ["node_modules", "dist"]
+}
