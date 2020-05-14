@@ -1,6 +1,6 @@
 {
   "name": "react-native-styled-px2dp",
-  "version": "1.1.0",
+  "version": "1.1.2",
   "description": "Write CSS px in react-native using styled-components and adapt multi resolution screens automatically.",
   "main": "dist/index.js",
   "scripts": {

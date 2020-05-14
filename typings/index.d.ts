@@ -6,7 +6,7 @@ interface IFlexibleInitProps {
 }
 declare const getFlexibleStyled: (props: IFlexibleInitProps) => {
     styled: any;
-    px2dp: (px: number) => string;
+    px2dp: (px: number) => number;
     updateOrientation: (newOrientation: IOrientation) => void;
 };
 export default getFlexibleStyled;

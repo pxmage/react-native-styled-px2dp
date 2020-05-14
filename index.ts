@@ -12,7 +12,9 @@ let orientation: IOrientation = 'portrait'
 const currentScreenWidth = () => Dimensions.get('window').width
 
 const relativeCaculator = (px: number) => {
-  return ((px / currentDesignWidth) * currentScreenWidth()).toFixed(2)
+  return Number(
+    ((px / currentDesignWidth) * currentScreenWidth()).toFixed(2)
+  )
 }
 
 const stringToRelativePX = (cssStr: string) => {
@@ -94,7 +96,7 @@ const getFlexibleStyled = (props: IFlexibleInitProps) => {
     }
   }
 
-  return { styled: flexibleStyled, px2dp: relativeCaculator, updateOrientation}
+  return { styled: flexibleStyled as any, px2dp: relativeCaculator, updateOrientation}
 }
 
 export default getFlexibleStyled
