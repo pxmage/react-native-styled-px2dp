@@ -17,9 +17,9 @@ npm i react-native-styled-px2dp --save
 note: `react-native` and `styled-components` are required peer dependencies.
 
 ### 2. configure your `styled`
-Setup a `styled` according to your visual disign.
+Setup a `styled` according to your visual design.
 
-Say we have an iphone6 visual disign which is 750x1334, then: 
+Say we have an iphone6 visual design which is 750x1334, then: 
 ```javascript
 // my-styled.js
 import getFlexibleStyled from 'react-native-styled-px2dp';
@@ -30,9 +30,9 @@ export const { styled } = getFlexibleStyled({
 ```
 
 ### 3. use your configured `styled`
-Now you can write css px values exactly what your visual disign tells you ;)
+Now you can write css px values exactly what your visual design tells you ;)
 
-The library will translate px into dp according to the design width of your visual disign.
+The library will translate px into dp according to the design width of your visual design.
 ```javascript
 import { styled } from 'path-to-your/my-styled'
 export const Logo = styled.Image`

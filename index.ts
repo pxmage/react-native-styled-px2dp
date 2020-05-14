@@ -16,6 +16,9 @@ const relativeCaculator = (px: number) => {
 }
 
 const stringToRelativePX = (cssStr: string) => {
+  // calling cssStr.replace on non-string will trigger error
+  if(typeof cssStr !== 'string') return cssStr
+
   return cssStr.replace(/([\d|.]+)px/gm, (matched, pxNumber) => {
     // you have to write px in styled components
     // and css-to-react-native(a dependency of Styled Components) will translate it to RN unit, which is dp
@@ -40,14 +43,23 @@ const interpolationToRelativePX = (interpolation) => {
   }
 }
 
-const flexibleStyled = new Proxy(styled, {
+//for extending styles like styled(SomeComponent)`blahblah`
+const extendingStyled = tag => (strings, ...interpolations) => {
+  const transformedStrings = strings.map(stringToRelativePX)
+  const transformedInterpolations = interpolations.map(interpolationToRelativePX)
+
+  return styled(tag)(transformedStrings, ...transformedInterpolations)
+}
+
+//for using primitives directly like styled.View`blahblah`
+const flexibleStyled = new Proxy(extendingStyled, {
   get: (target, prop) => 
     // return Tagged Template Literal to pretend styled component
     (strings, ...interpolations) => {
       const transformedStrings = strings.map(stringToRelativePX)
       const transformedInterpolations = interpolations.map(interpolationToRelativePX)
 
-      return target[prop](transformedStrings, ...transformedInterpolations)
+      return styled[prop](transformedStrings, ...transformedInterpolations)
     }
 })
 
