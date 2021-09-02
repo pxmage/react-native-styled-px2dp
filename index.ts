@@ -1,5 +1,6 @@
 const { Dimensions } = require('react-native')
 const styled = require('styled-components/native').default;
+import { ReactNativeStyledInterface, DefaultTheme} from "styled-components/native"
 
 type IOrientation = 'portrait'|'landscape'
 
@@ -96,7 +97,7 @@ const getFlexibleStyled = (props: IFlexibleInitProps) => {
     }
   }
 
-  return { styled: flexibleStyled as any, px2dp: relativeCaculator, updateOrientation}
+  return { styled: flexibleStyled as ReactNativeStyledInterface<DefaultTheme>, px2dp: relativeCaculator, updateOrientation}
 }
 
 export default getFlexibleStyled
