@@ -10,7 +10,7 @@ let currentDesignWidth, currentDesignHeight
 // device orientation, 'protrait' by default
 let orientation: IOrientation = 'portrait'
 // always re-get current screen width(becuz of oritation changes)
-const currentScreenWidth = () => Dimensions.get('window').width
+const currentScreenWidth = () => Dimensions.get('screen').width
 
 const relativeCaculator = (px: number) => {
   return Number(
